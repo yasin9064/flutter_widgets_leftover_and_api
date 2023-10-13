@@ -12,27 +12,22 @@ class _PracticeState extends State<Practice> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
-        body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            AnimatedOpacity(
-              opacity: myOpacity,
-              duration: Duration(seconds: 1),
-              child: Container(color: Colors.blue, width: 200, height: 200),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    if (isVisible) {
-                      myOpacity = 0.0;
-                      isVisible = false;
-                    } else {
-                      myOpacity = 1.0;
-                      isVisible = true;
-                    }
-                  });
-                },
-                child: Text('Erase'))
-          ]),
-        ));
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.purple,
+                Colors.indigo,
+                Colors.blue,
+                Colors.green,
+                Colors.yellow,
+                Colors.orange,
+                Colors.red
+
+              ]
+            )
+          ),
+        )
+        );
   }
 }
